@@ -15,7 +15,7 @@ else:
 
 
 #timeout
-timeout=10
+timeout=3
 
 #whether to alllow random User-Agent
 random_useragent = True

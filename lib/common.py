@@ -3,13 +3,13 @@
 
 import os
 import re
+import signal
 import urlparse
 import logging
 import requests
 import datetime
 from config import *
 from splinter import Browser
-
 
 
 def print_(context,color,background):
@@ -212,11 +212,15 @@ def getResponse(response):
     """
     请求返回的内容
     """
+    
     if response:
-    	if hasattr(response, "text"):
-        	return response.text
-    	else:
-        	return response.content
+        try:
+    	    if hasattr(response, "text"):
+        	    return response.text
+    	    else:
+        	    return response.content
+        except Exception,e:
+            return ""
     else:
         return ""
 
@@ -261,3 +265,17 @@ def current_time():
     now = datetime.datetime.now()
     current_time = now.strftime("%H:%M:%S")
     return current_time
+
+def kill_phantomjs():
+    """
+    phantomjs访问部分网站时会超时，如果超时自动杀死
+    """
+    own = os.getpid()
+    result = os.popen('ps aux')
+    res = result.read()
+    for line in res.splitlines():
+        if 'phantomjs' in line:
+            pid = int(line.split(None,2)[1])
+            if pid != own:
+                os.kill(pid,signal.SIGKILL)
+

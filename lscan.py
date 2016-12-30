@@ -16,6 +16,7 @@ from lib.datatype import AttribDict
 from lib.datatype import InjectionDict
 
 from lib.common import banner
+from lib.common import kill_phantomjs
 from lib.common import get_baseurl
 from lib.common import get_standard_data
 from lib.common import get_standard_cookie
@@ -127,4 +128,5 @@ if __name__ == '__main__':
         t.start()
     for t in threads:
         t.join()
+	kill_phantomjs()
     print '[*] shutting down at {time_}'.format(time_=datetime.datetime.now().strftime('%H:%M:%S'))

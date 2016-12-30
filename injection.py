@@ -53,12 +53,15 @@ class SendRequest(object):
 		Response返回值状态
         正常访问的情况
 		"""
-        	
-		if type(self.sendReq()) !=types.StringType:
-			code = self.sendReq().status_code
+        
+		if isinstance(self.sendReq(),str):
+			return 404
 		else:
-			code = 404
-		return code
+			try:
+				code = self.sendReq().status_code
+			except AttributeError as e:
+				code = 404	
+			return code
 
 	def sendReqStatus_(self):
 		"""
