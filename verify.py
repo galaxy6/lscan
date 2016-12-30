@@ -15,18 +15,18 @@ from lib.common import current_time
 import threading
 import multiprocessing
 class StandardOut(object):
-   """
-   装饰器，线程锁，标准数据输出，多线程下数据不会乱
-   """
-   def __init__(self):
-       self.thread_lock = threading.Lock()
+    """
+    装饰器，线程锁，标准数据输出，多线程下数据不会乱
+    """
+    def __init__(self):
+        self.thread_lock = threading.Lock()
 
-   def __call__(self,func):
-       def _call(*args,**kw):
-           self.thread_lock.acquire()
-           func(*args,**kw)
-           self.thread_lock.release()
-       return _call
+    def __call__(self,func):
+        def _call(*args,**kw):
+            self.thread_lock.acquire()
+            func(*args,**kw)
+            self.thread_lock.release()
+        return _call
 
 class Verification(object):
     """

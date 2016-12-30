@@ -36,27 +36,27 @@ def initTargetEnv():
 
     if option.url:
         Injections.url = option.url
-        Injections.p = option.testParameter if option.testParameter else None
-        Injections.level = option.level if option.level else '1'
-        Injections.tech = option.tech if option.tech else None
-        Injections.headers = option.headers if option.headers else ''
-        Injections.cookie = option.cookie if option.cookie else ''
+	Injections.p = option.testParameter if option.testParameter else None
+	Injections.level = option.level if option.level else '1'
+	Injections.tech = option.tech if option.tech else None
+	Injections.headers = option.headers if option.headers else ''
+	Injections.cookie = option.cookie if option.cookie else ''
 
         if option.data:
-            Injections.ptype = 'POST'
-            Injections.data = option.data if option.data else ''
-            return Injections
+	    Injections.ptype = 'POST'
+	    Injections.data = option.data if option.data else ''
+	    return Injections
         else:
-            Injections.ptype = 'GET'
-            return Injections 
+	    Injections.ptype = 'GET'
+	    return Injections
     else:
         logging.info("You must enter the URL link !")
 
 def httpFormat():
     '''
     1.通过p参数指定测试元素
-	2.直接通过*好的位置指定测试的元素
-	3.默认情况(没有指定测试的参数)下的各个参数测试
+    2.直接通过*好的位置指定测试的元素
+    3.默认情况(没有指定测试的参数)下的各个参数测试
     '''
     Injections = initTargetEnv()
  
@@ -101,7 +101,6 @@ def httpFormat():
         cookie = get_flag_header(Injections.cookie)
         Injections.cookie = cookie
         Injections.place = "set"
-        #print Injections
         return Injections
 
     #什么都不设置的情况,直接返回原始url数据
@@ -121,12 +120,12 @@ if __name__ == '__main__':
     threads = []
     for payload in Payload().parseXmlNode():
         try:
-        	threads.append(threading.Thread(target=Verification,args=(payload,httpFormat())))
+            threads.append(threading.Thread(target=Verification,args=(payload,httpFormat())))
         except Exception,e:
             pass
     for t in threads:
         t.start()
     for t in threads:
         t.join()
-	kill_phantomjs()
+    kill_phantomjs()
     print '[*] shutting down at {time_}'.format(time_=datetime.datetime.now().strftime('%H:%M:%S'))

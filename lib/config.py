@@ -5,13 +5,13 @@ import random
 is_windows = sys.platform.startswith('win')
 
 if is_windows:
-   G=Y=B=R=W=''
+    G=Y=B=R=W=''
 else:
-   G = '\033[92m' #green
-   Y = '\033[93m' #yellow
-   B = '\033[94m' #blue
-   R = '\033[91m' #red
-   W = '\033[0m'  #white
+    G = '\033[92m' #green
+    Y = '\033[93m' #yellow
+    B = '\033[94m' #blue
+    R = '\033[91m' #red
+    W = '\033[0m'  #white
 
 
 #timeout

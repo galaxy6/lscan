@@ -10,7 +10,6 @@ def cmdLineParser():
     """
     命令行中初始化各参数
     """
-
     parser = optparse.OptionParser(usage='Usage: python xx.py [Options] [URL]')
     parser.add_option("--version", dest="showVersion",action="store_true",help="Show program's version number and exit")
     parser.add_option("--url", dest="url", help="Parser URL (e.g. \"http://www.xxx.com/vuln.php?id=1\")")
@@ -31,4 +30,4 @@ def option_():
     option,args = cmdLineParser()
     if option.url == None or option.url =="None":
         print G+'Usage: python controller.py -h or --help'+W
-        sys.exit(0)
+	sys.exit(0)
