@@ -20,7 +20,7 @@ phantomjs
 利用param参数检测
 \# python lscan.py --url "http://demo.xxx.cn/demo/xxx/html_link.php?mid=2&id=1&action=2" --param id
 
-设置*标记检测，同sqlmap中的星号
+设置\*标记检测，同sqlmap中的星号
 \# python lscan.py --url "http://demo.xxx.cn/demo/xxx/html_link.php?mid=2&id=1*&action=2"
 
 直接提交请求，不设置参数就是全参数检测，同sqlmap
