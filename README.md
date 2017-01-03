@@ -23,29 +23,27 @@ phantomjs
 
 漏洞检测
 
-  利用param参数检测
+		利用param参数检测
+		# python lscan.py --url "http://demo.xxx.cn/demo/xxx/html_link.php?mid=2&id=1&action=2" --param id
+		设置星号标记检测，同sqlmap中的星号
+		
+		# python lscan.py --url "http://demo.xxx.cn/demo/xxx/html_link.php?mid=2&id=1\*&action=2"
+		
+		直接提交请求，不设置参数就是全参数检测，同sqlmap
   
-  # python lscan.py --url "http://demo.xxx.cn/demo/xxx/html_link.php?mid=2&id=1&action=2" --param id
+		# python lscan.py --url "http://demo.xxx.cn/demo/xxx/html_link.php?mid=2&id=1&action=2"
   
-  设置星号标记检测，同sqlmap中的星号
+		post请求检测,同样支持\*号设置和全参数检测
   
-  # python lscan.py --url "http://demo.xxx.cn/demo/xxx/html_link.php?mid=2&id=1\*&action=2"
+		# python lscan.py --url "http://demo.xxx.cn/demo/xxx/" --data "id=1&cmd=test&action=read" --param cmd
   
-  直接提交请求，不设置参数就是全参数检测，同sqlmap
+		cookie/header检测
   
-  # python lscan.py --url "http://demo.xxx.cn/demo/xxx/html_link.php?mid=2&id=1&action=2"
+		cookie和header仅仅支持星号类型的检测方式。字典要用单引号。
   
-  post请求检测,同样支持\*号设置和全参数检测
+		#python lscan.py --url "http://demo.xxx.cn/demo/xxx/" --data "id=1&cmd=test&action=read" --header "{'cmd':'test','X-Forwarded—For','test\*'}"
   
-  # python lscan.py --url "http://demo.xxx.cn/demo/xxx/" --data "id=1&cmd=test&action=read" --param cmd
-  
-  cookie/header检测
-  
-  cookie和header仅仅支持星号类型的检测方式。字典要用单引号。
-  
-  #python lscan.py --url "http://demo.xxx.cn/demo/xxx/" --data "id=1&cmd=test&action=read" --header "{'cmd':'test','X-Forwarded—For','test\*'}"
-  
-  #python lscan.py --url "http://demo.xxx.cn/demo/xxx/" --data "id=1&cmd=test&action=read" --cookie "{'id':'test','cmd':'test','admin','test\*'}"
+		#python lscan.py --url "http://demo.xxx.cn/demo/xxx/" --data "id=1&cmd=test&action=read" --cookie "{'id':'test','cmd':'test','admin','test\*'}"
 
 
 漏洞显示
