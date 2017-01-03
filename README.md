@@ -59,7 +59,7 @@ phantomjs
 		[11:38:55] [INFO] testing 'SXSS [Payload] [<svg onload=prompt(/StoredXssBySvgTag/)>]' [RESULT] 'Saved successfully !' 
 
 
-##使用扩展
+##Extend
 总结的只是部分payload,可以根据自己的要求增加测试的payload。
 
 各个参数的解析，可以根据具体情况扩展payload。
@@ -71,8 +71,13 @@ phantomjs
 		    <level>level1</level>
 		    <request>
 		        <payload><![CDATA['"><script>document.title="[random]";</script>]]></payload>
-		    </request>																	    <response>																	        <grep></grep>																    </response>
-		    <details>																	        <versions>Linux,Windows</version>													        <info>Reflected XSS</info>
+		    </request>
+		    <response>
+		        <grep></grep>
+		    </response>
+		    <details>
+		        <versions>Linux,Windows</version>
+		        <info>Reflected XSS</info>
 		    </details>
 		</test>
 
