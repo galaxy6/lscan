@@ -8,8 +8,6 @@ import types
 
 class AttribDict(dict):
     """
-    This class defines the sqlmap object, inheriting from Python data
-    type dictionary.
 
     >>> foo = AttribDict()
     >>> foo.bar = 1
